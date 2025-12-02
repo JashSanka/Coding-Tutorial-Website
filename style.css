@@ -1,0 +1,440 @@
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* common.css */
+        /* ========================================
+   CSS VARIABLES (Custom Properties)
+   ======================================== */
+        /* Define color scheme for consistent theming across the site */
+        :root {
+            --bgcolor: #F7F3E8;
+            /* Light beige background for main content area */
+            --sidebar: #EFEADF;
+            /* Slightly darker beige for sidebar */
+            --navbar-bg: #FFFFFF;
+            /* White background for navbar */
+            --border-color: #B8B1A3;
+            /* Soft brown for borders */
+            --text-primary: #2B2B2B;
+            /* Dark gray for main text */
+            --text-secondary: #7C7C7C;
+            /* Medium gray for secondary text */
+            --hover-bg: #E4DDD0;
+            /* Light brown for hover states */
+        }
+
+        /* ========================================
+   GLOBAL RESET AND BASE STYLES
+   ======================================== */
+        /* Apply box-sizing to all elements for easier sizing calculations */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Ensure html and body take full viewport height, remove default margins */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Base body styles: typography, colors, and layout */
+        body {
+            margin: 0;
+            font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: var(--bgcolor);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+   NAVBAR STYLES
+   ======================================== */
+        /* Top navigation bar - sits above all content */
+        #navbar {
+            background: var(--navbar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 24px;
+            display: flex;
+            /* Use flexbox for horizontal layout */
+            justify-content: space-between;
+            /* Space logo and account section apart */
+            align-items: center;
+            /* Vertically center items */
+            position: sticky;
+            /* Stick to top when scrolling */
+            top: 0;
+            z-index: 100;
+            /* Ensure navbar stays above other content */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            /* Subtle shadow for depth */
+        }
+
+        /* Logo styling in navbar */
+        #navbar .logo {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        /* Account/actions section in navbar */
+        #navbar .acc {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            /* Space between elements */
+        }
+
+        /* Sign in button styling */
+        #navbar button {
+            background: var(--text-primary);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            /* Smooth hover effect */
+        }
+
+        /* Button hover state */
+        #navbar button:hover {
+            opacity: 0.85;
+        }
+
+        /* ========================================
+   SIDEBAR STYLES
+   ======================================== */
+        /* Fixed sidebar navigation - stays in place during scroll */
+        .sidebar {
+            width: 260px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border-color);
+            height: 100vh;
+            /* Full viewport height */
+            padding: 24px;
+            box-sizing: border-box;
+            position: fixed;
+            /* Fixed positioning for persistent visibility */
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            /* Scrollable if content exceeds height */
+            z-index: 50;
+            /* Below navbar but above main content */
+        }
+
+        /* Sidebar heading */
+        .sidebar h1 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        /* Remove default list styling from sidebar navigation */
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Sidebar navigation links */
+        .sidebar ul li {
+            margin-bottom: 4px;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s ease;
+            /* Smooth hover transition */
+        }
+
+        /* Hover state for sidebar links */
+        .sidebar ul li a:hover {
+            background: var(--hover-bg);
+        }
+
+        /* Active/current page indicator in sidebar */
+        .sidebar ul li a.active {
+            background: var(--hover-bg);
+            font-weight: 600;
+        }
+
+        /* Legacy styles for backwards compatibility */
+        .sidebar .nav-item {
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 14px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .sidebar .nav-item:hover {
+            background: var(--hover-bg);
+        }
+
+        /* ========================================
+   MAIN CONTENT AREA STYLES
+   ======================================== */
+        /* Main content wrapper - positioned to account for fixed sidebar */
+        .content {
+            margin-left: 260px;
+            /* Match sidebar width */
+            padding: 32px 40px;
+            width: calc(100% - 260px);
+            /* Fill remaining space */
+            box-sizing: border-box;
+            min-height: 100vh;
+            /* Ensure content fills viewport */
+        }
+
+        /* Main content headings */
+        .content h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .content h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        /* Paragraphs and lists in content */
+        .content p {
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .content ul,
+        .content ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        /* Inline code styling */
+        .content code {
+            background: #F0EBE0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+
+        /* ========================================
+   UTILITY COMPONENTS
+   ======================================== */
+        /* Horizontal divider line */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: #D0C8BA;
+            margin: 24px 0;
+        }
+
+        /* Code testing boxes - empty containers for JavaScript code execution later */
+        .code-block,
+        .code-box {
+            background: #F0EBE0;
+            border: 1px solid #C9C3B8;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+            min-height: 120px;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 14px;
+            position: relative;
+        }
+
+        /* Callout/alert boxes for special notes */
+        .callout {
+            background: #EDE7DB;
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        /* Section containers for better content organization */
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+        /* Mobile/tablet view: collapse sidebar, stack layout vertically */
+        @media (max-width: 700px) {
+
+            /* Make sidebar static and full-width on small screens */
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            /* Remove left margin from content, make full-width */
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 16px;
+            }
+
+            /* Adjust navbar padding for mobile */
+            #navbar {
+                padding: 12px 16px;
+            }
+        }
+
+        /* index2.css */
+        /* ========================================
+   INDEX2.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Introduction page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* syntax.css */
+        /* ========================================
+   SYNTAX.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Syntax and Output page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* dandv.css */
+        /* ========================================
+   DANDV.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Datatypes and Variables page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* typecast.css */
+        /* ========================================
+   TYPECAST.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Typecasting page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* operator.css */
+        /* ========================================
+   OPERATOR.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Operators page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* cs.css */
+        /* ========================================
+   CS.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Conditional Statements page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* loop.css */
+        /* ========================================
+   LOOP.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Loops page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* jump.css */
+        /* ========================================
+   JUMP.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Jumping Statements page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* function.css */
+        /* ========================================
+   FUNCTION.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Functions page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* list.css */
+        /* ========================================
+   LIST.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Lists page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* dst.css */
+        /* ========================================
+   DST.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Dictionaries, Sets, Tuples page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* strings.css */
+        /* ========================================
+   STRINGS.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Strings page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+        /* recursion.css */
+        /* ========================================
+   RECURSION.HTML - PAGE-SPECIFIC STYLES
+   ======================================== */
+        /* Add custom styles specific to the Recursion page here */
+
+        /* Currently using default styles from common.css */
+        /* Add any page-specific overrides or customizations below */
+
+
+        /* SPA Transitions */
+        .page-section {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
