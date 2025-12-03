@@ -1,4 +1,7 @@
-        html {
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
+       html {
             scroll-behavior: smooth;
         }
 
@@ -7,6 +10,18 @@
    CSS VARIABLES (Custom Properties)
    ======================================== */
         /* Define color scheme for consistent theming across the site */
+
+        h1{
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        h2,h3,main,section{
+            font-family: "Share Tech Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+        }
         :root {
             --bgcolor: #F7F3E8;
             /* Light beige background for main content area */
