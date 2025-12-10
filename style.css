@@ -92,6 +92,11 @@
             font-size: 16px;
             color: var(--text-primary);
             letter-spacing: 0.5px;
+            width: 20px;
+        }
+        
+        #navbar .logo img{
+            height: 70px;
         }
 
         /* Account/actions section in navbar */
