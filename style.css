@@ -550,7 +550,15 @@ table tr th {
 .page-section {
     animation: fadeIn 0.3s ease-in-out;
 }
-
+footer{
+    
+    color: black;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
