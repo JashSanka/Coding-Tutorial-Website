@@ -550,14 +550,13 @@ table tr th {
 .page-section {
     animation: fadeIn 0.3s ease-in-out;
 }
-footer{
-    
-    color: black;
+footer {
     text-align: center;
-    width: 100%;
-    height: auto;
-    position: relative;
-    bottom: 0;
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    
+    margin-top: 40px;
 }
 @keyframes fadeIn {
     from {
