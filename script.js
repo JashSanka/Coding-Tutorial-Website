@@ -392,6 +392,7 @@ print(reverse_str("recursion"))`
 }
 const sign=document.getElementById("sign-in");
 const table=document.getElementById("table1");
+const foot=document.getElementsByTagName("footer");
 function toggleTheme() {
         // Check if the body has the 'dark-mode' class
         if (body.classList.contains("dark-mode")) {
@@ -400,7 +401,10 @@ function toggleTheme() {
                 toggleButton.innerText = "Dark Mode";
                 table.style.backgroundColor="#E4DDD0";
                 sign.style.backgroundColor="black";
-                sign.style.color="white";               
+                sign.style.color="white";
+                for(let i=0;i<foot.length;i++){
+                    foot[i].style.color="black";
+                }              
                 setEditorTheme('vs');
         } else {
                 // If it doesn't, add it (switch to dark mode)
@@ -409,6 +413,9 @@ function toggleTheme() {
                 table.style.backgroundColor="#3B3B3B";
                 sign.style.backgroundColor="white";
                 sign.style.color="black"; 
+                for(let i=0;i<foot.length;i++){
+                    foot[i].style.color="white";
+                }
                 setEditorTheme('vs-dark');
         }
 
