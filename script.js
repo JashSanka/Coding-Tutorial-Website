@@ -391,19 +391,25 @@ print(reverse_str("recursion"))`
         return codeMap[sectionId] || "# Write your Python code here\\nprint('Hello, Python!')";
 }
 
+const table=document.getElementById("table1");
 function toggleTheme() {
         // Check if the body has the 'dark-mode' class
         if (body.classList.contains("dark-mode")) {
                 // If it does, remove it (switch to light mode)
                 body.classList.remove("dark-mode");
                 toggleButton.innerText = "Dark Mode";
+                table.style.backgroundColor="#E4DDD0";
+               
                 setEditorTheme('vs');
         } else {
                 // If it doesn't, add it (switch to dark mode)
                 body.classList.add("dark-mode");
                 toggleButton.innerText = "Light Mode";
+                table.style.backgroundColor="#3B3B3B";
+                
                 setEditorTheme('vs-dark');
         }
+
 }
 
 function setEditorTheme(theme) {

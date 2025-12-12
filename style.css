@@ -434,6 +434,12 @@ section {
     }
 }
 
+/* Table Styles */
+table tr th {
+    background-color: var(--hover-bg);
+    color: var(--text-primary);
+}
+
 /* index2.css */
 /* ========================================
    INDEX2.HTML - PAGE-SPECIFIC STYLES
