@@ -402,9 +402,9 @@ function toggleTheme() {
                 table.style.backgroundColor="#E4DDD0";
                 sign.style.backgroundColor="black";
                 sign.style.color="white";
-                for(let i=0;i<foot.length;i++){
-                    foot[i].style.color="black";
-                }              
+                // for(let i=0;i<foot.length;i++){
+                //     foot[i].style.color="black";
+                // }              
                 setEditorTheme('vs');
         } else {
                 // If it doesn't, add it (switch to dark mode)
@@ -413,10 +413,10 @@ function toggleTheme() {
                 table.style.backgroundColor="#3B3B3B";
                 sign.style.backgroundColor="white";
                 sign.style.color="black"; 
-                for(let i=0;i<foot.length;i++){
-                    foot[i].style.color="white";
-                }
-                setEditorTheme('vs-dark');
+                // for(let i=0;i<foot.length;i++){
+                //     foot[i].style.color="white";
+                // }
+                // setEditorTheme('vs-dark');
         }
 
 }
